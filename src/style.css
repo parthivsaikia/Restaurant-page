@@ -15,15 +15,22 @@ nav button{
 }
 
 .hero-section{
+    /* border: 2px red solid; */
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    /* box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 3px 8px;
+    gap: 30px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
 }
 
 .hero-image-container{
-    width: 80%;
-    height: 40%;
+    width: 60%;
+    /* height: 40%; */
 }
 
 .hero-image{
@@ -35,4 +42,54 @@ nav button{
 
 .hero-info{
     color: aliceblue;
+    text-align: center;
+}
+
+.customer-review-section{
+    color: aliceblue;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cards-holder{
+    color: wheat;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    gap: 2rem;
+    /* width: 90%; */
+    margin: 2rem auto;
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 3px 8px;
+    padding: 1rem 0;
+}
+
+.customer-image{
+    height: 50px;
+    border-radius: 50%;
+}
+
+.card{
+    box-shadow: rgba(50, 50, 93, 0.45) 0px 30px 60px -12px, rgba(100, 0, 0, 0.5) 0px 18px 36px -18px;
+    background-color: rgba(0,0,0,0.1);
+    /* border: 1px red solid; */ 
+    padding: 10px;
+    width: 90%;
+    margin: 0 auto;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.name-and-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-and-star{
+    display: flex;
+    justify-content: space-between;
 }
