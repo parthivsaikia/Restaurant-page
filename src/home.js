@@ -1,9 +1,40 @@
-import image from './Pizza.jpeg';
-import luffyImg from './Luffy.jpeg';
-import zoroImg from './zoro.jpeg';
-import chopperImg from './chopper.jpeg';
-import frankyImg from './franky.jpeg';
+import image from './images/Pizza.jpeg';
+import luffyImg from './images/Luffy.jpeg';
+import zoroImg from './images/zoro.jpeg';
+import chopperImg from './images/chopper.jpeg';
+import frankyImg from './images/franky.jpeg';
+import homeImg from './images/home.svg';
+import menuImg from './images/menu.svg';
+import aboutImg from './images/about.svg';
+import contactImg from './images/phone.svg';
+import headerImg from './images/headerlogo.jpeg'
 import './style.css';
+
+function addImagesToNav(){
+    const headerLogoContainer = document.querySelector('.header-logo');
+    const home = document.querySelector('.home');
+    const menu = document.querySelector('.menu');
+    const about = document.querySelector('.about');
+    const contact = document.querySelector('.contact');
+
+    const headerLogo = new Image();
+    headerLogo.src = headerImg;
+    const myHomeImg = new Image();
+    myHomeImg.src = homeImg;
+    const myMenuImg = new Image();
+    myMenuImg.src = menuImg;
+    const myAboutImg = new Image();
+    myAboutImg.src = aboutImg;
+    const myContactImg = new Image();
+    myContactImg.src = contactImg;
+    headerLogoContainer.appendChild(headerLogo);
+    home.appendChild(myHomeImg);
+    menu.appendChild(myMenuImg);
+    about.appendChild(myAboutImg);
+    contact.appendChild(myContactImg);
+
+
+}
 
 function makeElement(element,className){
     const elementName = document.createElement(element);
@@ -92,8 +123,9 @@ function customerReview(){
 }
 
 function addToBody(){
-    const body = document.querySelector('body');
-    body.appendChild(homePage());
+    const content = document.querySelector('#content');
+    addImagesToNav();
+    content.appendChild(homePage());
 }
 
 export {makeElement,addToBody};
