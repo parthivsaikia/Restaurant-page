@@ -46,6 +46,7 @@ function homePage(){
     const container = makeElement('div','container');
     container.appendChild(heroSection());
     container.appendChild(customerReview())
+    addImagesToNav();
     return container;
 }
 
@@ -122,11 +123,11 @@ function customerReview(){
     return customerReviewSection;
 }
 
-function addToBody(){
+function loadHome(){
     const content = document.querySelector('#content');
-    addImagesToNav();
+    content.innerHTML = "";
     content.appendChild(homePage());
 }
 
-export {makeElement,addToBody};
+export {makeElement,loadHome};
 
