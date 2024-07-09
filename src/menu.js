@@ -1,4 +1,5 @@
 import {makeElement} from './home';
+import './style.css';
 import cherrypie from './images/CherryPies.jpeg';
 import meatpie from './images/MeatPie.jpeg';
 import sandwiches from './images/Sandwiches.jpeg';
@@ -6,7 +7,29 @@ import hamburger from './images/Hamburger.jpeg';
 import onigiri from './images/Onigiri.jpeg';
 import oshiruko from './images/Oshiruko.jpeg'
 
+import grilledPizza from './images/grilledpizza.jpeg';
+import chickedMeatballsImg from './images/chickenmeatballs.jpeg';
+import porkChop from './images/porkchopstirfry.jpeg';
+import chickenFriedRiceImg from './images/chickenfriedrice.jpeg';
+import tacoPastaImg from './images/tacopasta.jpeg';
+import chickenMeatloaf from './images/chickenmeatloaf.jpeg';
+
+import cottonCandy from './images/cottoncandy.jpeg';
+import chocolateFunfettiCake from './images/chocolatefunfetticake.jpeg';
+import lemonRaspberryCake from './images/lemonraspberrycake.jpeg';
+import bastani from './images/bastani.jpeg';
+import sawdustPie from './images/sawdustpie.jpeg';
+import espressoCake from './images/espressocake.jpeg';
+
+import lassi from './images/lassi.jpeg';
+import lemonade from './images/lemonade.jpeg';
+import tea from './images/tea.jpeg';
+import appleJuice from './images/applejuice.jpeg';
+import orangeJuice from './images/orangejuice.jpeg';
+import mangoJuice from './images/mango.jpeg';
+
 function container(){
+
     const menuContainer = makeElement('div','menu-container');
 
     const appetizers =  makeElement('div','appetizers');
@@ -24,11 +47,35 @@ function container(){
         'Hamburger':{price:300, imageSrc:hamburger},
         'Onigiri':{price:250, imageSrc:onigiri},
         'Oshiruko':{price:300, imageSrc:oshiruko},
+    };
+
+    const mainCourseList = {
+        'Grilled Pizza':{price:500,imageSrc:grilledPizza},
+        'Chicken Meatballs':{price:700,imageSrc:chickedMeatballsImg},
+        'Pork Chop Stir-Fry':{price:700,imageSrc:porkChop},
+        'Chicken Fried Rice':{price:800,imageSrc:chickenFriedRiceImg},
+        'Taco Pasta':{price:600,imageSrc:tacoPastaImg},
+        'Chicken Meatloaf':{price:800,imageSrc:chickenMeatloaf}
+    };
+
+    const dessertsList = {
+        'Cotton Candy':{price:100,imageSrc:cottonCandy},
+        'Chocolate Funfetti Cake':{price:300,imageSrc:chocolateFunfettiCake},
+        'Lemon Raspberry Cake':{price:300,imageSrc:lemonRaspberryCake},
+        'Bastani':{price:270,imageSrc:bastani},
+        'Sawdust Pie':{price:300,imageSrc:sawdustPie},
+        'Espresso Cake':{price:280,imageSrc:espressoCake}
+    };
+
+    const beveragesList = {
+        'Lassi':{price:100,imageSrc:lassi},
+        'Lemonade':{price:80,imageSrc:lemonade},
+        'Tea':{price:80,imageSrc:tea},
+        'Apple Juice':{price:90,imageSrc:appleJuice},
+        'Orange Juice':{price:90,imageSrc:orangeJuice},
+        'Mango Juice':{price:85,imageSrc:mangoJuice}
     }
 
-    // const mainCourseList = {
-    //     'Grilled Pizza':
-    // }
     function makeMenu(foodType,object){
         const menuCardHeading = makeElement('h2','menu-card-heading');
         function addToMenu({name,price,imageSrc}){
@@ -58,7 +105,9 @@ function container(){
 
     }
     makeMenu(appetizers,appetizersList);
-
+    makeMenu(mainCourse,mainCourseList);
+    makeMenu(desserts,dessertsList);
+    makeMenu(beverages,beveragesList);
     return menuContainer;
 }
 
