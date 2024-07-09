@@ -8,6 +8,7 @@ import menuImg from './images/menu.svg';
 import aboutImg from './images/about.svg';
 import contactImg from './images/phone.svg';
 import headerImg from './images/headerlogo.jpeg'
+import { loadMenu } from './menu';
 import './style.css';
 
 
@@ -53,6 +54,9 @@ function homePage(){
 
 function heroSection(){
     const heroSectionContainer = makeElement('div','hero-section');
+    const orderNowBtn = makeElement('button','order-now');
+    orderNowBtn.textContent = "Order Now";
+    orderNowBtn.addEventListener('click',loadMenu);
     const heroInfo = makeElement('div','hero-info');
     const heroInfoHeading = makeElement('h1','hero-info-heading');
     const heroInfoPara = makeElement('p','hero-info-para');
@@ -65,6 +69,7 @@ function heroSection(){
     heroSectionContainer.appendChild(heroImageContainer);
     heroInfo.appendChild(heroInfoHeading);
     heroInfo.appendChild(heroInfoPara);
+    heroInfo.appendChild(orderNowBtn);
     heroInfoHeading.textContent = "Tasty but Healthy";
     heroInfoPara.textContent = "Live life, love food";
 

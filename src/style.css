@@ -1,9 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#content{
+    width: 100%;
 }
 
 header{
@@ -51,6 +59,13 @@ nav button{
     gap: 1rem;
     background-color: black;
     color: white;
+    width: 90%;
+    border-radius: 2rem;
+}
+
+nav button:focus{
+    border-bottom: 1px solid white;
+    background-color: rgb(255 255 255 /0.1);
 }
 
 nav button img{
@@ -70,6 +85,15 @@ nav button img{
     gap: 30px;
     margin: 2rem auto;
     padding: 2rem 1rem;
+}
+
+.order-now{
+    color: white;
+    background-color: rgb(44, 88, 233);
+    width: 70%;
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
 }
 
 .hero-image-container{
@@ -137,3 +161,79 @@ nav button img{
     justify-content: space-between;
 }
 
+@media screen and (min-width:1160px) {
+    .hero-section{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+}
+
+/*styling the menu */
+
+.menu-container{
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 3px 8px;
+    margin: 0 auto;
+    /* width: 80%; */
+    color: white;
+    display: grid;
+    gap: 100px;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    justify-items: center;
+}
+
+.appetizers, .mainCourse, .desserts, .beverages{
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 3px 8px;
+    padding: 10px;
+    margin: 1rem 1rem;
+    
+}
+
+.menu-card-heading{
+    border-bottom: 2px solid white;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.food-card-div{
+    /* margin: 0 auto; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    /* justify-items: center; */
+    gap: 1rem;
+    width: 90%;
+}
+
+.name-and-price{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.food-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 300px;
+    margin-bottom: 10px;
+    box-shadow: rgba(50, 50, 93, 0.45) 0px 30px 60px -12px, rgba(100, 0, 0, 0.5) 0px 18px 36px -18px;
+}
+
+.food-image-div{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.food-image-div img{
+    border-radius: 50%;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

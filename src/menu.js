@@ -33,7 +33,7 @@ function container(){
     const menuContainer = makeElement('div','menu-container');
 
     const appetizers =  makeElement('div','appetizers');
-    const mainCourse = makeElement('div','main');
+    const mainCourse = makeElement('div','mainCourse');
     const desserts = makeElement('div','desserts');
     const beverages = makeElement('div','beverages');
 
@@ -76,26 +76,28 @@ function container(){
         'Mango Juice':{price:85,imageSrc:mangoJuice}
     }
 
-    function makeMenu(foodType,object){
+    function makeMenu(name,foodType,object){
         const menuCardHeading = makeElement('h2','menu-card-heading');
+        menuCardHeading.textContent = name;
+        const foodCardDiv = makeElement('div','food-card-div');
         function addToMenu({name,price,imageSrc}){
-            
             const foodCard = makeElement('div','food-card');
             const foodImageDiv = makeElement('div','food-image-div');
-            const foodName = makeElement('h2','food-name');
+            const foodName = makeElement('h4','food-name');
+            const nameAndPrice = makeElement('div','name-and-price');
             const foodPrice = makeElement('p','food-price');
             const foodDescription = makeElement('p','food-description');
             const foodImage = new Image();
+            nameAndPrice.append(foodName,foodPrice)
             foodImage.src = imageSrc;
             foodImageDiv.appendChild(foodImage);
             foodName.textContent = name;
-            foodPrice.textContent = price;
-            foodCard.append(foodImageDiv,foodName,foodPrice,foodDescription);
+            foodPrice.textContent = '₶  '+price;
+            foodCard.append(foodImageDiv,nameAndPrice,foodDescription);
 
-            foodType.appendChild(foodCard);
-
+            foodCardDiv.appendChild(foodCard);
         }
-        foodType.append(menuCardHeading);
+        foodType.append(menuCardHeading,foodCardDiv);
         const foodArray = Object.entries(object);
         foodArray.forEach(([name,details]) => {
             addToMenu({name,...details});
@@ -104,10 +106,10 @@ function container(){
         
 
     }
-    makeMenu(appetizers,appetizersList);
-    makeMenu(mainCourse,mainCourseList);
-    makeMenu(desserts,dessertsList);
-    makeMenu(beverages,beveragesList);
+    makeMenu('Appetizers',appetizers,appetizersList);
+    makeMenu('Main Courses',mainCourse,mainCourseList);
+    makeMenu('Desserts',desserts,dessertsList);
+    makeMenu('Beverages',beverages,beveragesList);
     return menuContainer;
 }
 
