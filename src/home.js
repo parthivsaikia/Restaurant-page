@@ -10,7 +10,9 @@ import contactImg from './images/phone.svg';
 import headerImg from './images/headerlogo.jpeg'
 import './style.css';
 
-function addImagesToNav(){
+
+
+
     const headerLogoContainer = document.querySelector('.header-logo');
     const home = document.querySelector('.home');
     const menu = document.querySelector('.menu');
@@ -34,7 +36,7 @@ function addImagesToNav(){
     contact.appendChild(myContactImg);
 
 
-}
+
 
 function makeElement(element,className){
     const elementName = document.createElement(element);
@@ -46,7 +48,6 @@ function homePage(){
     const container = makeElement('div','container');
     container.appendChild(heroSection());
     container.appendChild(customerReview())
-    addImagesToNav();
     return container;
 }
 
