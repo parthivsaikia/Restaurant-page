@@ -1,5 +1,7 @@
 import { makeElement } from "./home";
 import sanji from './images/sanji.jpeg';
+import './style.css';
+import { pageName } from "./home";
 
 function aboutContainer(){
     const aboutContainerDiv = makeElement('div','about-container-div');

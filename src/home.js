@@ -14,6 +14,7 @@ import './style.css';
 
 
 
+
     const headerLogoContainer = document.querySelector('.header-logo');
     const home = document.querySelector('.home');
     const menu = document.querySelector('.menu');

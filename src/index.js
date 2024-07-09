@@ -2,7 +2,9 @@ import {loadHome} from "./home";
 import { loadMenu } from "./menu";
 import { loadAbout } from "./about";
 import { loadContact } from "./contact";
+
 loadHome();
+
 
 const homeBtn = document.querySelector('.home');
 const menuBtn = document.querySelector('.menu');
@@ -14,4 +16,4 @@ homeBtn.addEventListener('click',loadHome);
 menuBtn.addEventListener('click',loadMenu);
 aboutBtn.addEventListener('click',loadAbout);
 contactBtn.addEventListener('click',loadContact);
-// orderNowBtn.addEventListener('click',loadMenu);
+
